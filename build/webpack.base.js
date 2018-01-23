@@ -1,7 +1,9 @@
 'use strict'
 
 const path = require('path');
+const cwd = process.cwd();
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const babelLoader = {
 	loader: 'babel-loader',
@@ -17,21 +19,27 @@ const babelLoader = {
 
 module.exports = {
 	entry: {
-		app: path.resolve(__dirname, '../app/index.js'),
+		app: path.resolve(cwd, 'app/index.js'),
 	},
 	output: {
-		path: path.resolve(__dirname, '../dist'),
+		path: path.resolve(cwd, 'dist'),
 		publicPath: '/',
 		filename: '[name].js'
+	},
+	devServer: {
+		//  contentBase: path.resolve(cwd, 'dist'),
+		//  hot: true,
+		//  port: 1700
 	},
 	module: {
 		rules: [
 			{
 				test: /\.css$/,
-				use: [
-					'style-loader',
-					'css-loader'
-				]
+				loader: ExtractTextPlugin.extract(['css-loader'])
+			},
+			{
+				test: /\.less$/,
+				loader: ExtractTextPlugin.extract(['css-loader', 'less-loader'])
 			},
 			{
 				test: /\.vue$/,
@@ -60,9 +68,9 @@ module.exports = {
 				},
 			},
 			{
-				test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+				test: /\.(woff2?|eot|ttf|otf|svg)(\?.*)?$/,
 				use: {
-					loader: 'url-loader',
+					loader: 'file-loader',
 					options: {
 						limit: 10000,
 						name: 'static/fonts/[name].[hash:7].[ext]'
@@ -75,12 +83,9 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			title: 'TJU-Robot',
 			filename: 'index.html',
-			template: path.resolve(__dirname, '../index.html')
-		})
-	],
-	devServer: {
-		 contentBase: path.resolve(__dirname, '../dist'),
-		 hot: true,
-		 port: 1700
-	}
+			template: path.resolve(__dirname, '../index.html'),
+			inject: 'head'
+		}),
+		new ExtractTextPlugin('styles.css')
+	]
 }
