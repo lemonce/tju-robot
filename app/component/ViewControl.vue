@@ -53,6 +53,7 @@ export default {
 		.btn {
 			background: @secondary-color;
 			color: @main-color;
+			border: 1px solid @main-color;
 
 			&:focus {
 				box-shadow: 0 0;

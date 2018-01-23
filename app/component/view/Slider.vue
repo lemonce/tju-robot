@@ -1,10 +1,22 @@
 <template>
-<div style="width:160px">
-	<input type="range"
-		class="control-slider"
-		v-model="value"
-		@change="moveSlider()">
-	<span class="slider-value">0</span>
+<div>
+	<div class="slider">
+		<input type="range"
+			class="angle-control"
+			v-model="angle"
+			@change="getAngleValue()">
+		<span class="angle-value">0°</span>
+
+	</div>
+
+	<div class="slider">
+		<input type="range"
+			class="speed-control"
+			v-model="speed"
+			@change="getSpeedValue()">
+		<span class="speed-value">0m/s</span>
+
+	</div>
 </div>
 </template>
 
@@ -13,30 +25,44 @@ export default {
 	name: 'motor-slider',
 	data() {
 		return {
-			value: 0,
-			index: this.sliderIndex
+			angle: 0,
+			speed: 0,
+			index: this.motorIndex
 		}
 	},
-	props: [ 'sliderIndex' ],
+	props: [ 'motorIndex' ],
 	methods: {
-		moveSlider() {
-			const slider = document.getElementsByClassName('control-slider')[this.index];
-			const sliderValue = document.getElementsByClassName('slider-value')[this.index];
+		getAngleValue() {
+			const angleControl = document.getElementsByClassName('angle-control')[this.index];
+			const angleValue = document.getElementsByClassName('angle-value')[this.index];
 
-			sliderValue.innerHTML = this.value;
+			angleValue.innerHTML = `${this.angle}°`;
 
-			return slider.style.backgroundSize = `${this.value}% 100%`;
-				
-			
+			return angleControl.style.backgroundSize = `${this.angle}% 100%`;
+		},
+		getSpeedValue() {
+			const speedControl = document.getElementsByClassName('speed-control')[this.index];
+			const speedValue = document.getElementsByClassName('speed-value')[this.index];
+
+			speedValue.innerHTML = `${this.speed}m/s`;
+
+			return speedControl.style.backgroundSize = `${this.speed}% 100%`;
 		}
 	}
 }
 </script>
 
 <style lang="less">
+#simulation .slider {
+	width: 128px;
+
+	> span {
+		font-size:12px;
+	}
+}
 input[type=range] {
 	-webkit-appearance: none;
-	width: 120px;
+	width: 80px;
 	border-radius: 10px;
 	background: linear-gradient(#059CFA, #059CFA) no-repeat;
 	background-size: 0% 100%;
@@ -46,16 +72,16 @@ input[type=range] {
 	}
 
 	&::-webkit-slider-runnable-track {
-		height: 8px;
-		border-radius: 10px;
+		height: 4px;
+		border-radius: 4px;
 		border: 1px solid #999;
 		position: relative;
 	}
 
 	&::-webkit-slider-thumb {
 		-webkit-appearance: none;
-		height: 16px;
-		width: 16px;
+		height: 12px;
+		width: 12px;
 		position: absolute;
 		top: 50%;
 		transform: translateY(-50%);

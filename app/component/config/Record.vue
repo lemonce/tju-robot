@@ -1,3 +1,3 @@
 <template>
-<div>record</div>
+<div>recording</div>
 </template>
