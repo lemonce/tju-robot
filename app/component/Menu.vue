@@ -16,19 +16,20 @@
 </template>
 
 <script>
-import Link from './config/Link.vue';
+import Connection from './config/Connection.vue';
 import Record from './config/Record.vue';
 import Attribute from './config/Attribute.vue';
+import Maintenance from './config/Maintenance.vue';
 
 export default {
 	name: 'app-menu',
 	data() {
 		return {
-			currentOption: 'link',
+			currentOption: 'connection',
 			menu: [
 				{
-					title: 'Link',
-					label: 'link',
+					title: 'Connection',
+					label: 'connection',
 					icon: 'fa-link'
 				},
 				{
@@ -41,15 +42,21 @@ export default {
 					label: 'attribute',
 					icon: 'fa-bars'
 				},
+				{
+					title: 'Maintenance',
+					label: 'maintenance',
+					icon: 'fa-cogs'
+				}
 			]
 		}
 	},
 	computed: {
 		panel() {
 			return {
-				link: Link,
+				connection: Connection,
 				record: Record,
-				attribute: Attribute
+				attribute: Attribute,
+				maintenance: Maintenance
 			}
 		}
 	}
@@ -98,5 +105,6 @@ export default {
 	left: @menu-width;
 	overflow: hidden;
 	background: @secondary-color;
+	padding: 15px 20px;
 }
 </style>

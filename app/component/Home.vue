@@ -2,18 +2,18 @@
 <div id="workbench">
 	<app-menu id="menu-container"></app-menu>
 	<div id="view-container">
-		<view-control></view-control>
+		<view-controller></view-controller>
 	</div>
 </div>
 </template>
 
 <script>
 import AppMenu from './Menu.vue';
-import ViewControl from './ViewControl.vue';
+import ViewController from './View.vue';
 
 export default {
 	name: 'home',
-	components: { AppMenu, ViewControl }
+	components: { AppMenu, ViewController }
 }
 </script>
 

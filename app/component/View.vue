@@ -5,8 +5,8 @@
 			<button
 				type="button"
 				class="btn"
-				:class="{'active-view': currentView === 'table'}"
-				@click.stop="currentView = 'table'"><i
+				:class="{'active-view': currentView === 'joint'}"
+				@click.stop="currentView = 'joint'"><i
 					class="fa fa-sliders"></i></button>
 			<button
 				type="button"
@@ -22,16 +22,16 @@
 </template>
 
 <script>
-import Table from './view/Table.vue';
+import Joint from './view/Joint.vue';
 import Robot from './view/Robot.vue';
 
 export default {
-	name: 'view-control',
+	name: 'view-controller',
 	data() {
 		return {
-			currentView: 'table',
+			currentView: 'joint',
 			viewList: {
-				table: Table,
+				joint: Joint,
 				robot: Robot
 			}
 		}
@@ -45,10 +45,9 @@ export default {
 
 #view-page {
 	height: 100%;
+	padding: 15px 20px;
 
 	.toggle-view {
-		margin-top: 15px;
-		margin-right: 20px;
 
 		.btn {
 			background: @secondary-color;
