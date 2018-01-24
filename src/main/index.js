@@ -3,17 +3,23 @@
 const electron = require('electron');
 const path = require('path');
 const url = require('url');
+require('../server');
 
 const { app, BrowserWindow } = electron;  
 
 let mainWin;
 
 function createWindow() {
-	mainWin = new BrowserWindow({ width: 800, height: 600 });
+	mainWin = new BrowserWindow({
+		width: 1280,
+		height: 720,
+		useContentSize: true,
+		resizable: false
+	});
 	mainWin.setMenu(null);
 	mainWin.loadURL(url.format({
-		pathname: path.join(__dirname, '../../dist/index.html'),
-		protocol: 'file:',
+		pathname: 'localhost:4000',
+		protocol: 'http:',
 		slashes: true
 	}));
 
