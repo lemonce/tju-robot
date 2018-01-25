@@ -29,7 +29,6 @@ export default {
 	bottom: 0;
 	left: 0;
 	overflow: hidden;
-	border: 1px solid black;
 }
 #menu-container {
 	width: @menu-container-width;

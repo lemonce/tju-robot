@@ -6,8 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config build/webpack.base.js --progress",
-    "dev": "electron . dev",
-    "dev-server": "webpack-dev-server --config build/webpack.base.js --hot --host 0.0.0.0 --port 1700",
+    "dev": "npm-run-all --parallel dev:*",
+    "dev:app": "electron . dev & webpack-dev-server --config build/webpack.base.js --hot --host 0.0.0.0",
+    "dev:server": "webpack-dev-server --config build/webpack.base.js --hot --host 0.0.0.0",
     "start": "npm run build && electron ."
   },
   "repository": {
@@ -47,5 +48,8 @@
     "vuex": "^3.0.1",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.11.1"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.2"
   }
 }

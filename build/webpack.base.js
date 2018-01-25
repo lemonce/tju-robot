@@ -27,9 +27,9 @@ module.exports = {
 		filename: '[name].js'
 	},
 	devServer: {
-		//  contentBase: path.resolve(cwd, 'dist'),
-		//  hot: true,
-		//  port: 1700
+		 contentBase: path.resolve(cwd, 'dist'),
+		 hot: true,
+		 port: 1700
 	},
 	module: {
 		rules: [

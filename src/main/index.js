@@ -18,7 +18,7 @@ function createWindow() {
 	});
 	mainWin.setMenu(null);
 	mainWin.loadURL(url.format({
-		pathname: 'localhost:4000',
+		pathname: 'localhost:1700',
 		protocol: 'http:',
 		slashes: true
 	}));
