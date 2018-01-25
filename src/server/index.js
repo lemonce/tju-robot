@@ -9,3 +9,5 @@ let server = null;
 app.use('/', express.static(path.resolve(__dirname, '../../dist')));
 
 app.listen(4000);
+
+require('../serialport');
