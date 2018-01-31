@@ -31,7 +31,7 @@ export default {
 	overflow: hidden;
 }
 #menu-container {
-	width: @menu-container-width;
+	width: @menu-container;
 	height: 100%;
 	position: absolute;
 	overflow-x: hidden;
@@ -42,7 +42,7 @@ export default {
 	top: 0;
 	right: 0;
 	bottom: 0;
-	left: @menu-container-width;
+	left: @menu-container;
 	overflow: hidden;
 
 }

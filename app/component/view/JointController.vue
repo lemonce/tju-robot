@@ -2,7 +2,7 @@
 <div id="joint">
 	<div class="">
 		<div class="input-group mb-3">
-			<input type="number"
+			<input type="text"
 				class="form-control joint-value" v-model="value">
 		</div>
 		<div class="input-group">
@@ -36,5 +36,16 @@ export default {
 </script>
 
 <style lang="less">
+#joint-list input[type=range] {
 
+	&::-webkit-slider-runnable-track {
+		height: 16px;
+		border-radius: 16px;
+	}
+
+	&::-webkit-slider-thumb {
+		width: 24px;
+		height: 24px;
+	}
+}
 </style>

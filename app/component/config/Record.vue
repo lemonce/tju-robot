@@ -2,7 +2,7 @@
 <div>
 	<h5>Recording</h5>
 
-	<div class="card">
+	<div class="card mb-3">
 		<div class="card-body">
 			<h5 class="card-title">Mode</h5>
 			<div class="form">
@@ -13,7 +13,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="card">
+	<div class="card mb-3">
 		<div class="card-body">
 			<h5 class="card-title">Capture</h5>
 
@@ -30,7 +30,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="card">
+	<div class="card mb-3">
 		<div class="card-body">
 			<h5 class="card-title">Copy & Exchange</h5>
 			<div class="d-flex flex-column">

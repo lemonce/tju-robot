@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 const path = require('path');
 const cwd = process.cwd();
@@ -87,5 +87,10 @@ module.exports = {
 			inject: 'head'
 		}),
 		new ExtractTextPlugin('styles.css')
-	]
-}
+	],
+	resolve: {
+		alias: {
+			'vue$': 'vue/dist/vue.runtime.min.js',
+		}
+	}
+};

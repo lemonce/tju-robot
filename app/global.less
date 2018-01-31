@@ -3,11 +3,13 @@ body {
 	user-select: none;
 }
 
-@menu-container-width: 375px;
-@menu-width: 50px;
+@menu-container: 375px;
+@menu: 50px;
 
-@main-color: #607D8B;
-@secondary-color: #F0F8FF;
+@white: #FFF;
+@main: #607D8B;
+@secondary: #F0F8FF;
+@border: #CED4DA;
 
 input[type=range] {
 	-webkit-appearance: none;
@@ -21,21 +23,17 @@ input[type=range] {
 	}
 
 	&::-webkit-slider-runnable-track {
-		height: 16px;
-		border-radius: 16px;
-		border: 1px solid #CED4DA;
+		border: 1px solid @border;
 		position: relative;
 	}
 
 	&::-webkit-slider-thumb {
 		-webkit-appearance: none;
-		height: 24px;
-		width: 24px;
 		position: absolute;
 		top: 50%;
 		transform: translateY(-50%);
-		background: #fff;
+		background: @white;
 		border-radius: 50%;
-		border: 1px solid #CED4DA;
+		border: 1px solid @border;
 	}
 }

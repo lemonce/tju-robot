@@ -50,17 +50,17 @@ export default {
 	.toggle-view {
 
 		.btn {
-			background: @secondary-color;
-			color: @main-color;
-			border: 1px solid @main-color;
+			background: @secondary;
+			color: @main;
+			border: 1px solid @main;
 
 			&:focus {
 				box-shadow: 0 0;
 			}
 		}
 		.active-view {
-			background: @main-color;
-			color: @secondary-color;
+			background: @main;
+			color: @secondary;
 		}
 	}
 }

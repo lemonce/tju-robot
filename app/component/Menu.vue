@@ -67,21 +67,21 @@ export default {
 @import '../global.less';
 
 #menu {
-	width: @menu-width;
+	width: @menu;
 	height: 100%;
-	background: @main-color;
+	background: @main;
 	position: absolute;
 	overflow-x: hidden;
 	overflow-y: auto;
 	
 	.config-option {
-		width: @menu-width;
-		height: @menu-width;
+		width: @menu;
+		height: @menu;
 		position: relative;
 
 		.fa {
 			display: block;
-			color: @secondary-color;
+			color: @secondary;
 			position: absolute;
 			top: 50%;
 			left: 50%;
@@ -90,10 +90,10 @@ export default {
 	}
 
 	.config-option.active {
-		background-color:@secondary-color;
+		background-color:@secondary;
 
 		.fa {
-			color: @main-color;
+			color: @main;
 		}
 	}
 }
@@ -102,9 +102,9 @@ export default {
 	top: 0;
 	right: 0;
 	bottom: 0;
-	left: @menu-width;
+	left: @menu;
 	overflow: hidden;
-	background: @secondary-color;
+	background: @secondary;
 	padding: 15px 20px;
 }
 </style>

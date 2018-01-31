@@ -119,6 +119,23 @@ export default {
 	.table-box {
 		height: 100%;
 		overflow-y: scroll;
+
+		&::-webkit-scrollbar {
+			width: 6px;
+			height: 6px;
+		}
+		&::-webkit-scrollbar-track-piece {
+			background: #607D8B;
+
+		}
+		&::-webkit-scrollbar-thumb:vertical {
+			height: 5px;
+			background: #CED4DA;
+		}
+		&::-webkit-scrollbar-thumb:horizontal {
+			width: 5px;
+			background: #607D8B;
+		}
 	}
 }
 </style>
