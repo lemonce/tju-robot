@@ -10,3 +10,22 @@ exports.new = function (comName, options, openCallback) {
 exports.getPortList = async function () {
  return await SerialPort.list();
 };
+
+SerialPort.list();
+
+const robot = new SerialPort('COM4', {
+	baudRate: 115200
+});
+
+robot.open(err => {
+	if (err) {
+		return console.log('Error opening port: ', err.message);
+	}
+});
+
+setInterval(() => {
+	const angle = Math.floor(Math.random() * 170) + 100;
+
+	robot.write(`{116,S10,2,${angle},20}`, 'ascii');
+
+}, 1000);

@@ -16,7 +16,7 @@ function createWindow() {
 		useContentSize: true,
 		resizable: false
 	});
-	mainWin.setMenu(null);
+	// mainWin.setMenu(null);
 	mainWin.loadURL(url.format({
 		pathname: 'localhost:1700',
 		protocol: 'http:',
@@ -55,3 +55,5 @@ app.on('activate', () => {
 		createWindow();
 	}
 });
+
+console.log(11111)
