@@ -15,7 +15,7 @@ function createWindow() {
 		height: 720,
 		useContentSize: true,
 		resizable: false,
-		fullscreenable: false,
+		fullscreenable: false
 	});
 	// mainWin.setMenu(null);
 	mainWin.loadURL(url.format({
